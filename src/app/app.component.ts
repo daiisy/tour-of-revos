@@ -6,6 +6,7 @@ export class Revolutionaries {
   name: string;
 };
 
+// static array
 const REVOS: Revolutionaries[] = [
   { id: 11, name: 'Pam Tau Lee' },
   { id: 12, name: 'Grace Lee Boggs' },
@@ -22,8 +23,8 @@ const REVOS: Revolutionaries[] = [
 
 @Component({
   selector: 'app-root',
- //templateUrl: './app.component.html',
-  template: //'<h1>{{title}}</h1><h2>{{revo.name}} details!</h2>',
+ //templateUrl: './app.component.html', // overrides template
+  template: 
   
    `<h1>{{title}}</h1>
 
@@ -95,7 +96,7 @@ const REVOS: Revolutionaries[] = [
    }
  `]
 
-  //styleUrls: ['./app.component.css']
+  //styleUrls: ['./app.component.css'] //overrides styles
 })
 
 
@@ -103,13 +104,7 @@ const REVOS: Revolutionaries[] = [
 
 export class AppComponent {
   title = 'Tour of Revolutionaries';
-  // revo : Revolutionaries = {
-  //   id: 1,
-  //   name: 'Yuri Kochiyama'
-  // } 
-
   revos = REVOS;
-
   selectedRev: Revolutionaries;
   
   onSelect(revo: Revolutionaries): void {
