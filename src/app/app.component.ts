@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
-
+import { Revolutionaries } from './revolutionaries';
 //  Remember that in JS position/order matters because SCOPE + WAY OF COMPILING
-export class Revolutionaries {
-  id: number;
-  name: string;
-};
+
 
 // static array
 const REVOS: Revolutionaries[] = [
@@ -27,7 +24,6 @@ const REVOS: Revolutionaries[] = [
   template: 
   
    `<h1>{{title}}</h1>
-
   <h2>My Revolutionary Heroes (;</h2>
   <ul class="heroes">
     <li *ngFor="let revo of revos" (click)="onSelect(revo)" [class.selected]="revo === selectedRev">
@@ -35,15 +31,7 @@ const REVOS: Revolutionaries[] = [
        <span class="badge">{{revo.id}}</span> {{revo.name}}
      </li>
    </ul>
-   
-   <div *ngIf="selectedRev">
-   <h2>{{selectedRev.name}} details!</h2>
-     <div><label>id: </label>{{selectedRev.id}}</div>
-     <div>
-       <label>name: </label> 
-       <input [(ngModel)]="selectedRev.name" placeholder="name"> 
-     </div>
-   </div>
+   <revo-detail [revo]="selectedRev"></revo-detail>
    `,
   
    styles: [`

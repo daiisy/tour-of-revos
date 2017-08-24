@@ -4,11 +4,14 @@ import { FormsModule } from '@angular/forms'; //<-- NGModel lives here
 
 import { AppComponent } from './app.component';
 
+import { RevoDetailComponent } from './revo-detail.component';
+
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RevoDetailComponent
   ],
   imports: [
     BrowserModule,
